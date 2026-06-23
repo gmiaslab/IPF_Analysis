@@ -1,0 +1,10 @@
+variable_type,domain,level,GSE213001_n,GSE213001_denom,GSE213001_prop,other_n,other_denom,other_prop,difference_in_proportion,smd,abs_smd
+binary,Repeated sampling,RepeatedSubjectSample,0,101,0.0,64,122,0.5246,-0.5246,-1.4856,1.4856
+binary,LibraryLayout,PAIRED,0,101,0.0,31,122,0.2541,-0.2541,-0.8254,0.8254
+binary,LibraryLayout,SINGLE,101,101,1.0,91,122,0.7459,0.2541,0.8254,0.8254
+binary,Group,IPF_female,22,101,0.2178,5,122,0.041,0.1768,0.5462,0.5462
+binary,Sex,female,39,101,0.3861,19,122,0.1557,0.2304,0.5367,0.5367
+binary,Group,IPF_male,40,101,0.396,68,122,0.5574,-0.1613,-0.3273,0.3273
+binary,Group,Healthy_male,22,101,0.2178,35,122,0.2869,-0.0691,-0.1595,0.1595
+binary,Group,Healthy_female,17,101,0.1683,14,122,0.1148,0.0536,0.1541,0.1541
+binary,Condition,IPF,62,101,0.6139,73,122,0.5984,0.0155,0.0317,0.0317

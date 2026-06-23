@@ -1,0 +1,58 @@
+# Operating-system and editor metadata
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# Python caches and local environments
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+.venv/
+venv/
+env/
+
+# R session and project-local state
+.Rhistory
+.RData
+.Ruserdata
+.Rproj.user/
+*.Rout
+
+# Plotting and runtime caches
+.mplconfig/
+.cache/
+
+# LaTeX and document build products
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.nav
+*.out
+*.run.xml
+*.snm
+*.synctex.gz
+*.toc
+*.vrb
+
+# Local archives, source PDFs, and superseded assembly intermediates
+archive/
+analysis_output_files/
+references/
+
+# Temporary or conflict files
+*.tmp
+*.bak
+*.orig
+*.rej
+~$*.docx

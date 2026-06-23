@@ -1,0 +1,49 @@
+#!/bin/bash --login
+#
+# Example SLURM script for downloading public SRA runs and converting them to
+# FASTQ files with SRA Toolkit. Run from the directory where downloaded data
+# should be written, with one SRA accession per line in the accession-list file.
+
+### define resources needed:
+#SBATCH --time=08:00:00             # limit of wall clock time - how long the job will run (same as -t)
+#SBATCH --nodes=1                # number of different nodes - could be an exact number or a range of nodes (same as -N)
+#SBATCH --ntasks=1           # number of tasks - how many tasks (nodes) that you require (same as -n)
+#SBATCH --cpus-per-task=8           # number of CPUs (or cores) per task (same as -c)
+#SBATCH --mem-per-cpu=4G            # memory required per allocated CPU (or core) - amount of memory (in bytes)
+#SBATCH --job-name=SRA      # you can give your job a name for easier identification (same as -J)
+#SBATCH --mail-type=ALL             # email on all events
+#SBATCH --mail-user=your_email@example.edu   # email address
+
+###*****NOTES******####
+# run this script using sbatch from the directory where the data will be placed. 
+# adjust the time as necessary for bigger lists
+
+###********MODULES*****###
+module load SRA-Toolkit/3.0.10-gompi-2023a
+
+###*******DEFINITIONS*******###
+# filename points to file with SRA accessions one line at a time - can get this from SRA directly to use here. 
+accessions="SRR_Acc_List.txt"
+#number of threads - check that correct no. are allocated in the resources above
+threadNO=8
+###******COMPUTATIONS*******###
+
+#prefetch
+echo "prefetch started"
+echo `date`
+prefetch --option-file ${accessions}
+
+echo "prefetch done"
+echo `date`
+echo >> ${accessions}
+#previous line adds end of line character to accession file
+while IFS= read -r line
+do
+    echo "$line"
+    fasterq-dump --threads ${threadNO} --split-3 --skip-technical "$line"
+    rm -r "$line"
+    echo "done processing accession" "$line"
+done < "${accessions}"
+
+echo "done with entire list"
+echo `date`

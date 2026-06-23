@@ -1,0 +1,8 @@
+"analysis","contrast","genes_compared","pearson_logFC","spearman_logFC","shared_sig","baseline_sig","current_sig","baseline_only","current_only","samples","analysis_label","group"
+"exclude_GSE184316","disease_average",20310,0.992163851014604,0.98157427426679,2323,2443,2528,120,205,159,"Exclude GSE184316","Primary sensitivity"
+"leave_out_GSE138239","disease_average",20310,0.988824686276083,0.973621147148852,2139,2443,2229,304,90,208,"Leave out GSE138239","Leave-one-study-out"
+"leave_out_GSE184316","disease_average",20310,0.992163851014604,0.98157427426679,2323,2443,2528,120,205,159,"Leave out GSE184316","Leave-one-study-out"
+"leave_out_GSE199949","disease_average",20310,0.996395942464389,0.992245272656169,2323,2443,2394,120,71,189,"Leave out GSE199949","Leave-one-study-out"
+"leave_out_GSE213001","disease_average",20310,0.773597952371242,0.70214837196509,359,2443,575,2084,216,122,"Leave out GSE213001","Leave-one-study-out"
+"leave_out_GSE73189","disease_average",20310,0.99899254247048,0.998383755815178,2438,2443,2622,5,184,214,"Leave out GSE73189","Leave-one-study-out"
+"no_age","disease_average",20310,0.974289962931381,0.955609642674141,2219,2443,2602,224,383,233,"No age covariate","Primary sensitivity"

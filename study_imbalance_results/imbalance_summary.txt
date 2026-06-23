@@ -1,0 +1,17 @@
+Study imbalance summary
+Target study: GSE213001
+Retained-sample comparison: GSE213001 (n=101) vs other studies combined (n=122)
+
+Top binary/categorical imbalances by absolute standardized mean difference:
+- Repeated sampling = RepeatedSubjectSample: GSE213001 proportion=0.000, other proportion=0.525, diff=-0.525, abs_smd=1.486
+- LibraryLayout = PAIRED: GSE213001 proportion=0.000, other proportion=0.254, diff=-0.254, abs_smd=0.825
+- LibraryLayout = SINGLE: GSE213001 proportion=1.000, other proportion=0.746, diff=0.254, abs_smd=0.825
+- Group = IPF_female: GSE213001 proportion=0.218, other proportion=0.041, diff=0.177, abs_smd=0.546
+- Sex = female: GSE213001 proportion=0.386, other proportion=0.156, diff=0.230, abs_smd=0.537
+
+Top age imbalances by absolute standardized mean difference:
+- Group | Healthy_male: GSE213001 mean age=42.23, other mean age=56.94, diff=-14.72, abs_smd=1.405
+- Sex | female: GSE213001 mean age=56.67, other mean age=46.00, diff=10.67, abs_smd=0.834
+- Group | Healthy_female: GSE213001 mean age=48.47, other mean age=39.93, diff=8.54, abs_smd=0.696
+- Condition | Healthy: GSE213001 mean age=44.95, other mean age=52.08, diff=-7.13, abs_smd=0.566
+- Condition | IPF: GSE213001 mean age=62.21, other mean age=59.01, diff=3.20, abs_smd=0.475

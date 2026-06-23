@@ -1,0 +1,60 @@
+#!/bin/bash --login
+#
+# Example SLURM wrapper for submitting trimming and STAR mapping jobs.
+# This script reads one accession per line from an accession-list file and
+# submits one mapping job per accession using eg_TrimSTAR.sh.
+
+### define resources needed:
+#SBATCH --time=00:15:00             # limit of wall clock time - how long the job will run (same as -t)
+#SBATCH --nodes=1                # number of different nodes - could be an exact number or a range of nodes (same as -N)
+#SBATCH --ntasks=1           # number of tasks - how many tasks (nodes) that you require (same as -n)
+#SBATCH --cpus-per-task=1           # number of CPUs (or cores) per task (same as -c)
+#SBATCH --mem-per-cpu=100M            # memory required per allocated CPU (or core) - amount of memory (in bytes)
+#SBATCH --job-name=trimMapGen      # you can give your job a name for easier identification (same as -J)
+#SBATCH --mail-type=ALL # notify user by email for job status changes
+#SBATCH --mail-user=your_email@example.edu  # User to receive state changes email. default is submitting user.
+#
+###*****NOTES******####
+# run this script using sbatch from the directory where the data will be placed. 
+###********MODULES*****###
+###*******DEFINITIONS*******###
+mailUser="your_email@example.edu"
+mailType=ALL
+accessionList="SRR_Acc_List.txt"
+#Trimmomatic parameters
+readLength=51
+headcrop=13
+tailCrop=1
+crop=$(($readLength-$headcrop-$tailCrop))
+paired=no
+echo "Settings:"
+if [ "$paired" == "yes" ]
+    then
+        echo "Paired data"
+fi
+echo "read length: ${readLength}, headcrop: ${headcrop}, tailCrop: ${tailCrop}, Mapped Length: ${crop}"
+#MapperParameters
+mapper="./eg_TrimSTAR.sh"
+mapMemory=8G
+mapTimeOut=12:00:00 # 1 hour OK for small files.
+mapNodes=1
+mapCPUs=8
+cleanup=yes #whether to do cleanup (remove BAM files and genome directory) [set as yes or no]
+echo "Remove BAM and genome directory: ${cleanup}"
+filePattern=".fastq" #for SRA usually
+#filePattern="_R1.fastq.gz" #for mapped data usually
+
+###******COMPUTATIONS*******###
+readarray -t arrayAccessions < ${accessionList} #use to read array
+# printf '%s\n' "${arrayAccessions[@]}"
+#check list file exists and not empty
+if [ ${#arrayAccessions[@]} -eq 0 ]; then
+    echo "Error: Accession list is empty or file does not exist."
+    exit 1
+fi
+for i in "${arrayAccessions[@]}"
+do
+# for i in *${filePattern} #Use if cycling through list from terminal
+    sbatch -t ${mapTimeOut} -n ${mapNodes} -c ${mapCPUs} --mem-per-cpu ${mapMemory} --mail-type ${mailType} --mail-user "${mailUser}" -J TrimSTARMap${i} ${mapper} ${i} ${headcrop} ${crop} ${paired} ${mapCPUs} ${cleanup} ${filePattern}
+    echo "submitted TrimSTARMap${i}"
+done

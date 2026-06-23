@@ -1,0 +1,16 @@
+Fixed-signature leave-one-study-out IPF classifier summary (Elastic Net Logistic Regression)
+
+Subject-level units analyzed: 175
+Held-out studies: GSE73189, GSE213001, GSE138239, GSE184316, GSE199949
+Best macro balanced-accuracy panel: top_50 (0.940)
+Corresponding macro sensitivity/specificity/precision: 1.000 / 0.880 / 0.914
+
+Macro-average metrics by panel:
+- top_10: balanced_accuracy=0.884, sensitivity=0.889, specificity=0.880, precision=0.914, roc_auc=0.940
+- top_25: balanced_accuracy=0.922, sensitivity=0.969, specificity=0.875, precision=0.911, roc_auc=0.940
+- top_50: balanced_accuracy=0.940, sensitivity=1.000, specificity=0.880, precision=0.914, roc_auc=0.950
+
+Pooled held-out predictions by panel:
+- top_10: tp=99, fp=3, tn=67, fn=6, balanced_accuracy=0.950, roc_auc=0.984
+- top_25: tp=103, fp=4, tn=66, fn=2, balanced_accuracy=0.962, roc_auc=0.991
+- top_50: tp=105, fp=3, tn=67, fn=0, balanced_accuracy=0.979, roc_auc=0.997

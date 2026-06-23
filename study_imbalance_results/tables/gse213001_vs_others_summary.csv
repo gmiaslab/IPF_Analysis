@@ -1,0 +1,3 @@
+Set,n_samples,n_subjects,n_repeated_subjects,n_repeated_subject_samples,n_healthy,n_ipf,n_female,n_male,n_healthy_female,n_healthy_male,n_ipf_female,n_ipf_male,age_mean,age_sd,age_median,age_min,age_max
+Other studies,122,74,16,64,49,73,19,103,14,35,5,68,56.23,10.08,58.0,26.0,72.0
+GSE213001,101,101,0,0,39,62,39,62,17,22,22,40,55.54,12.62,60.0,28.0,73.0
