@@ -1,5 +1,7 @@
 # IPF Integrated Transcriptomics Analysis
 
+[![DOI](https://zenodo.org/badge/1278516708.svg)](https://doi.org/10.5281/zenodo.20830715)
+
 ## Overview
 
 This repository contains the analysis code, harmonized inputs, and generated outputs associated with the manuscript Integrated RNA sequencing reanalysis reveals reproducible matrix-immune signatures in idiopathic
