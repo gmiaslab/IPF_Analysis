@@ -1,6 +1,6 @@
 # IPF Integrated Transcriptomics Analysis
 
-[![DOI](https://zenodo.org/badge/1278516708.svg)](https://doi.org/10.5281/zenodo.20830715)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20830716.svg)](https://doi.org/10.5281/zenodo.20830716)
 
 ## Overview
 
