@@ -5,7 +5,7 @@
 ## Overview
 
 This repository contains the analysis code, harmonized inputs, and generated outputs associated with the manuscript Integrated RNA sequencing reanalysis reveals reproducible matrix-immune signatures in idiopathic
-pulmonary fibrosis, by Nandimandalam et al. 
+pulmonary fibrosis, by Nandimandalam et al.
 
 The study reanalyzed publicly available bulk RNA-seq datasets using a common processing and statistical framework to identify disease-associated transcriptional programs that are reproducible across independent cohorts while accounting for study effects, repeated sampling, age, and sex.
 
@@ -96,7 +96,7 @@ The scripts were ran in the following order:
 
 ## References
 If you use this code and/or results please cite the associated manuscript:
-- Sneha Nandimandalam, Jin He and George I. Mias, *Integrated RNA sequencing reanalysis reveals reproducible matrix-immune signatures in idiopathic pulmonary fibrosis.* Journal TBD AND DOI.
+- Sneha Nandimandalam, Jin He and George I. Mias, *Integrated RNA sequencing reanalysis reveals reproducible matrix-immune signatures in idiopathic pulmonary fibrosis.* Journal TBD ; bioRxiv:  https://doi.org/10.64898/2026.06.24.734263.
 
 ## Contact Information
 * Project Principal Investigator: Dr George I. Mias (gmias@msu.edu)
